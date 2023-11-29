@@ -1,16 +1,22 @@
 ---
-
+import Baselayout from "../layouts/Baselayout.astro";
+import Slide from "../components/Slide.astro";
+import ComputerCards from "../components/ComputerCards.astro";
+const pageTitle = "PSL Computers Japan";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Baselayout pageTitle={pageTitle}>
+  <div class="banner">
+    <Slide />
+  </div>
+  <div class="showcase">
+    <h1>PSL COMPUTERS JAPAN</h1>
+    <h2>My Projects</h2>
+    <div class="card-container">
+      <ComputerCards />
+    </div>
+    <form action="#">
+      <button class="contactMe">contact me!</button>
+    </form>
+  </div>
+</Baselayout>

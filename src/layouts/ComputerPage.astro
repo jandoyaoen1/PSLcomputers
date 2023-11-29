@@ -1,0 +1,148 @@
+---
+// import '../style/computerPage.css';
+import Baselayout from "./Baselayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Baselayout>
+  <div class="computerPage">
+    <slot />
+    <article>
+      <h2>{frontmatter.title}</h2>
+      <p>
+        {frontmatter.description}
+      </p>
+      <p>
+       price: {frontmatter.price}
+      </p>
+      <form action="#">
+        <button class="contactMe">contact me!</button>
+        <button class="home"><a href={`/`}>home</a></button>
+      </form>
+    </article>
+  </div>
+</Baselayout>
+
+<style>
+  :root {
+    --background: #030203;
+    --font: #e6e1ea;
+    --active: #ab3b40;
+    --bright: #5900ff;
+    --arrow: #816996;
+    --cardFont: #fffb00;
+  }
+
+  .computerPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  p img {
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+    width: 40vw;
+    height: 70vh;
+    border-radius: 30px;
+  }
+
+  .contactMe,
+  .home {
+    margin: 1em 0.5em 0 0.5em;
+    
+    padding: 1em 2em;
+    background-color: transparent;
+    border: 2px solid var(--font);
+    color: var(--font);
+    transition-property: border-color, color;
+    border-radius: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition-duration: 500ms;
+  }
+
+  .contactMe:hover {
+    border-color: var(--active);
+    color: var(--active);
+    cursor: pointer;
+  }
+
+  .home:hover {
+    border-color: var(--active);
+    color: var(--active);
+  }
+
+  .home a:hover {
+    color: var(--active);
+  }
+  .home a {
+    text-decoration: none;
+    transition-duration: 500ms;
+    padding: 1em 3em;
+  }
+
+  a:link {
+    color: var(--font);
+  }
+
+  a:visited {
+    color: var(--font);
+  }
+
+  article {
+    margin: 1em;
+  }
+
+  .arrow {
+    position: relative;
+    color: var(--active);
+    top: 1em;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 500ms;
+  }
+
+  .arrow:focus {
+    border: none;
+  }
+
+  .arrow:hover {
+    color: var(--bright);
+  }
+
+  .arrow.left-arrow {
+    left: 1rem;
+  }
+
+  .arrow.right-arrow {
+    left: 1.5rem;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  @media (max-width: 850px) {
+    body {
+      min-width: 360px;
+    }
+    .computerPage {
+      padding-top: 3em;
+      flex-direction: column;
+    }
+    .imageContainer {
+      width: 90vw;
+      height: 20em;
+      gap: 0;
+      margin-top: 2em;
+    }
+  }
+</style>

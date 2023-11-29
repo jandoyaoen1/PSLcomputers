@@ -1,0 +1,14 @@
+---
+const allComputers = await Astro.glob("../pages/content/*.md");
+---
+
+{
+  allComputers.map((computer) => (
+    <a href={computer.url}>
+      <div id={computer.frontmatter.id} class="card">
+        <h2>{computer.frontmatter.title}</h2>
+        <h4>{computer.frontmatter.price}</h4>
+      </div>
+    </a>
+  ))
+}

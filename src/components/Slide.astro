@@ -1,0 +1,101 @@
+---
+import bridge from "../images/banner/bridge.jpg";
+import sky from "../images/banner/sky.jpg";
+import snow from "../images/banner/snow.jpg";
+import space from "../images/banner/space.jpg";
+import compbanner from "../images/banner/compBanner.jpg";
+---
+
+<div class="carouselContainer">
+  <div class="carousel" id="imageCarousel">
+    <img src={snow.src} alt="snow" class="slideImage" >
+    <img src={bridge.src} alt="bridge" class="slideImage" >
+    <img src={sky.src} alt="sky" class="slideImage" >
+    <img src={space.src} alt="space" class="slideImage" >
+    <img src={compbanner.src} alt="computer" class="slideImage" >
+  </div>
+  <button class="arrow left-arrow" id="left">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <button class="arrow right-arrow" id="right">
+    <i class="fas fa-arrow-right"></i>
+  </button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = document.querySelectorAll(".slideImage").length;
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+
+  function showSlide() {
+    const carousel = document.getElementById("imageCarousel");
+    const newTransformValue = -currentSlide * 100 + "vw";
+    carousel.style.transform = `translateX(${newTransformValue})`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    console.log("you clicked next!");
+    console.log(totalSlides);
+    showSlide();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    console.log("you clicked previous!");
+    showSlide();
+  }
+
+  leftArrow.addEventListener("click", prevSlide);
+  rightArrow.addEventListener("click", nextSlide);
+</script>
+
+<style>
+  
+  .carousel {
+    display: flex;
+    flex-direction: row;
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 1000ms;
+    transition-delay: 500ms;
+  }
+
+  .slideImage {
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .arrow {
+    position: absolute;
+    color: var(--arrow);
+    top: 50vh;
+    font-size: 3rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 500ms;
+    z-index: 1;
+  }
+
+  .arrow:focus {
+    border: none;
+  }
+
+  .arrow:hover {
+    color: var(--active);
+  }
+
+  .arrow.left-arrow {
+    left: 1.5em;
+  }
+
+  .arrow.right-arrow {
+    right: 1.5em;
+  }
+</style>

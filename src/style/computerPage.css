@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #030203;
+  --font: #e6e1ea;
+  --active: #ab3b40;
+  --bright: #5900ff;
+  --arrow: #816996;
+  --cardFont: #fffb00;
+}
+
+body {
+  color: var(--font);
+  background-color: var(--background);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+main {
+  margin-top: 1em;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  justify-items: center;
+  gap: 1em;
+}
+.imageContainer {
+  /* background-image: url('./assets/showcase/comp1.jpg'); */
+  background-position: center center;
+  background-size: cover;
+  width: 40vw;
+  height: 70vh;
+  transition-property: background-image;
+  transition-timing-function: ease-in;
+  transition-duration: 500ms;
+  border-radius: 10px;
+}
+
+.contactMe , .home {
+  margin-top: 1em;
+  padding: 1em 3em;
+  background-color: transparent;
+  border: 2px solid var(--font);
+  color: var(--font);
+  transition-property: border-color, color;
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition-duration: 500ms;
+}
+
+.contactMe:hover {
+  border-color: var(--active);
+  color: var(--active);
+}
+
+.home:hover {
+  border-color: var(--active);
+  color: var(--active);
+}
+
+a:hover {
+  color: var(--active);
+}
+.home a {
+  text-decoration: none;
+}
+
+a:link {
+  color: var(--font);
+}
+
+a:visited {
+  color: var(--font);
+}
+
+article {
+  margin: 1em;
+}
+
+.arrow {
+  position: relative;
+  color: var(--active);
+  top: 1em;
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.arrow:focus {
+  border: none;
+}
+
+.arrow:hover {
+  color: var(--bright);
+}
+
+.arrow.left-arrow {
+  left: 1rem;
+}
+
+.arrow.right-arrow {
+  left: 1.5rem;
+}
+
+@media (max-width: 850px) {
+  body {
+    min-width: 360px;
+  }
+  main {
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+  .imageContainer {
+    width: 90vw;
+    height: 20em;
+    gap: 0;
+    margin-top: 2em;
+  }
+}

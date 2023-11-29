@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #030203;
+  --font: #e6e1ea;
+  --active: #ab3b40;
+  --arrow: #816996;
+  --cardFont: #fffb00;
+}
+body {
+  color: var(--font);
+  background-color: var(--background);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.banner {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+}
+
+.showcase {
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.showcase > h1 {
+  letter-spacing: 10px;
+  font-size: clamp(2rem, 10vw, 4rem);
+  padding: 0 1em 0 1em;
+}
+
+.showcase > h2 {
+  margin: 1em 0 3em 0;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0.8;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 10px;
+  width: 40vw;
+  height: 18em;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+
+#comp1 {
+  background-image: url("../images/showcase/comp1.jpg");
+}
+
+#comp2 {
+  background-image: url("../images/showcase/comp2.jpg");
+}
+
+#comp3 {
+  background-image: url("../images/showcase/comp3.jpg");
+}
+
+#comp4 {
+  background-image: url("../images/showcase/comp4.jpg");
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card > h2 {
+  margin: 0;
+  padding: 0 0.3em;
+  background: rgba(0, 0, 0, 1);
+  color: var(--font);
+  letter-spacing: 4px;
+  border-radius: 5px;
+}
+
+.card > h4 {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  padding: 0 0.3em;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 1);
+  color: var(--active);
+  letter-spacing: 4px;
+}
+
+.contactMe {
+  margin: 3em;
+  padding: 1em 3em;
+  background-color: transparent;
+  border: 2px solid var(--font);
+  color: var(--font);
+  transition-property: border-color, color;
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition-duration: 500ms;
+}
+
+.contactMe:hover {
+  border-color: var(--active);
+  color: var(--active);
+}
+
+@media (max-width: 850px) {
+  body {
+    min-width: 360px;
+  }
+  .card {
+    width: 90vw;
+  }
+  .card-container {
+    grid-template-columns: none;
+  }
+}
