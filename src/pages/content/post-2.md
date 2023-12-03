@@ -5,4 +5,4 @@ title: "Computer Model 2"
 description: This is computer model 1. This is meow meow. I like meow meow.
 price: "price"
 ---
-![comp2](/src/images/showcase/comp2.jpg)
+![comp2](/src/pages/content/showcase/comp2.jpg)

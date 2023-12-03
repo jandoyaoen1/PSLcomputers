@@ -6,4 +6,4 @@ description: This is computer model 1. This is meow meow. I like meow meow. This
 price: "100$"
 ---
 
-![comp1](/src/images/showcase/comp1.jpg)
+![comp1](/src/pages/content/showcase/comp1.jpg)
