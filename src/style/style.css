@@ -69,19 +69,19 @@ body {
 }
 
 #comp1 {
-  background-image: url("../pages/content/showcase/comp1.jpg");
+  background-image: url("../images/showcase/comp1.jpg");
 }
 
 #comp2 {
-  background-image: url("../pages/content/showcase/comp2.jpg");
+  background-image: url("../images/showcase/comp2.jpg");
 }
 
 #comp3 {
-  background-image: url("../pages/content/showcase/comp3.jpg");
+  background-image: url("../images/showcase/comp3.jpg");
 }
 
 #comp4 {
-  background-image: url("../pages/content/showcase/comp4.jpg");
+  background-image: url("../images/showcase/comp4.jpg");
 }
 
 a {
